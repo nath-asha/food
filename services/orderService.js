@@ -1,5 +1,3 @@
-// orderService.js
-
 const Order = require('../models/Order');
 
 // Place a new order

@@ -1,5 +1,3 @@
-// foodRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const { getAllFoodItems } = require('../controllers/foodController');

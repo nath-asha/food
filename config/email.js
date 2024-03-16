@@ -1,5 +1,3 @@
-// email.js
-
 const nodemailer = require('nodemailer');
 
 // SMTP transport configuration for Gmail

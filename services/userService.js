@@ -1,5 +1,3 @@
-// userService.js
-
 const User = require('../models/User');
 
 // Get user profile by ID

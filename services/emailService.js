@@ -1,5 +1,3 @@
-// emailService.js
-
 const { sendEmail } = require('../config/email');
 
 // Send email

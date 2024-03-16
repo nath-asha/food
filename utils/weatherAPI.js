@@ -1,5 +1,3 @@
-// weatherAPI.js
-
 const axios = require('axios');
 
 // Fetch weather information from an external API

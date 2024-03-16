@@ -1,5 +1,3 @@
-// foodController.js
-
 const Food = require('../models/Food');
 
 // Get all food items

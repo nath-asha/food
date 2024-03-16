@@ -1,5 +1,3 @@
-// fileParser.js
-
 // Utility function to parse uploaded text files
 exports.parseTextFile = async (file) => {
     try {

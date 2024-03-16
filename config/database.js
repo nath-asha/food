@@ -1,5 +1,3 @@
-// database.js
-
 const mongoose = require('mongoose');
 
 // MongoDB connection URI

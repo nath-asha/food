@@ -1,5 +1,3 @@
-// authorization.js
-
 // Middleware to authorize user roles
 exports.authorize = (roles) => {
     return (req, res, next) => {

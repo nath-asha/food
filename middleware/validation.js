@@ -1,5 +1,3 @@
-// validation.js
-
 // Middleware to validate request body
 exports.validateBody = (schema) => {
     return (req, res, next) => {
