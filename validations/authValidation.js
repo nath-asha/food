@@ -1,4 +1,12 @@
+// authValidation.js
+
 const Joi = require('joi');
+
+// Validation schema for authentication
+const authSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required()
+});
 
 // Validation schema for user registration
 const registerSchema = Joi.object({
@@ -14,6 +22,7 @@ const loginSchema = Joi.object({
 });
 
 module.exports = {
+  authSchema,
   registerSchema,
   loginSchema
 };
