@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { register, login } = require('../controllers/authController');
 const { validateBody } = require('../middleware/validation');
-const { authSchema } = require('../validations/authValidation').default;
+const { authSchema } = require('../validations/authValidation');
 
 // Register a new user
 router.post('/register', validateBody(authSchema), async (req, res) => {

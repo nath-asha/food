@@ -7,8 +7,8 @@ const dbURI = 'mongodb+srv://nathasha:JTudgWPkl0wp7yrh@cluster0.zi63wrx.mongodb.
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
+  // useCreateIndex: true,
+  // useFindAndModify: false
 };
 
 // Connect to MongoDB
