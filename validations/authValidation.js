@@ -1,21 +1,19 @@
-// authValidation.js
-
-import { object, string } from 'joi';
+const Joi = require('joi');
 
 // Validation schema for user registration
-const registerSchema = object({
-  email: string().email().required(),
-  password: string().min(6).required(),
-  role: string().valid('user', 'admin', 'super user').optional() // Role is optional
+const registerSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required(),
+  role: Joi.string().valid('user', 'admin', 'super user').optional()
 });
 
 // Validation schema for user login
-const loginSchema = object({
-  email: string().email().required(),
-  password: string().required()
+const loginSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().required()
 });
 
-export default {
+module.exports = {
   registerSchema,
   loginSchema
 };
