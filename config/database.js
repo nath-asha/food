@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// MongoDB connection URI
-const dbURI = 'mongodb://localhost:27017/fooodiez';
+// MongoDB connection URI 
+const dbURI = 'mongodb+srv://nathasha:JTudgWPkl0wp7yrh@cluster0.zi63wrx.mongodb.net/';
 
 // MongoDB options
 const options = {

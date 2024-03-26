@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const app = express();
 const mongoose = require('./config/database');
