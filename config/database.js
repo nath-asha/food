@@ -3,16 +3,11 @@ const mongoose = require('mongoose');
 // MongoDB connection URI 
 const dbURI = 'mongodb+srv://nathasha:JTudgWPkl0wp7yrh@cluster0.zi63wrx.mongodb.net/';
 
-// MongoDB options
-const options = {
+// Connect to MongoDB
+mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  // useCreateIndex: true,
-  // useFindAndModify: false
-};
-
-// Connect to MongoDB
-mongoose.connect(dbURI, options);
+});
 
 // Connection events
 mongoose.connection.on('connected', () => {
