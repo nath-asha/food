@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-// MongoDB connection URI 
-const dbURI = 'mongodb+srv://nathasha:JTudgWPkl0wp7yrh@cluster0.zi63wrx.mongodb.net/';
+// MongoDB connection URI from environment variable
+const dbURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB
 mongoose.connect(dbURI, {
@@ -10,24 +11,30 @@ mongoose.connect(dbURI, {
 });
 
 // Connection events
-mongoose.connection.on('connected', () => {
+const dbConnection = mongoose.connection;
+
+dbConnection.on('connected', () => {
   console.log('Connected to MongoDB');
 });
 
-mongoose.connection.on('error', err => {
-  console.error('MongoDB connection error:', err);
+dbConnection.on('error', (err) => {
+  console.error('MongoDB connection error:', err.message);
 });
 
-mongoose.connection.on('disconnected', () => {
+dbConnection.on('disconnected', () => {
   console.log('Disconnected from MongoDB');
 });
 
 // Close MongoDB connection when Node.js process terminates
-process.on('SIGINT', () => {
-  mongoose.connection.close(() => {
+process.on('SIGINT', async () => {
+  try {
+    await mongoose.connection.close();
     console.log('MongoDB connection closed due to application termination');
     process.exit(0);
-  });
+  } catch (error) {
+    console.error('Error closing MongoDB connection:', error.message);
+    process.exit(1);
+  }
 });
 
-module.exports = mongoose;
+module.exports = dbConnection;

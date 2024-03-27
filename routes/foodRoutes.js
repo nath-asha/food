@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getAllFoodItems } = require('../controllers/foodController');
+const foodController = require('../controllers/foodController');
 
 // Get all food items
 router.get('/food', async (req, res) => {
   try {
-    const foodItems = await getAllFoodItems();
+    const foodItems = await foodController.getAllFoodItems(req, res);
     res.status(200).json(foodItems);
   } catch (error) {
     console.error('Error fetching food items:', error);

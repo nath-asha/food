@@ -4,9 +4,8 @@ const Food = require('../models/Food');
 exports.getAllFoodItems = async (req, res) => {
   try {
     const foodItems = await Food.find();
-    res.status(200).json(foodItems);
+    return foodItems;
   } catch (error) {
-    console.error('Error fetching food items:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    throw new Error('Error fetching food items:', error);
   }
 };
