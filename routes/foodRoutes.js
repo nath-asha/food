@@ -3,7 +3,8 @@ const router = express.Router();
 const foodController = require('../controllers/foodController');
 
 // Get all food items
-router.get('/food', async (req, res) => {
+//router.get('/foods', foodController.getAllFoods);
+router.get('/foods', async (req, res) => {
   try {
     const foodItems = await foodController.getAllFoodItems(req, res);
     res.status(200).json(foodItems);
